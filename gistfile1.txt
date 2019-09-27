@@ -1,0 +1,59 @@
+
+/*
+* Alex Bowman\
+* CSE 111
+* HW#3 with extra credit
+* Professor Silvestri 
+* 9/27
+* 
+*  
+* Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons
+* Spock, Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper,
+* Paper disproves Spock, Spock vaporizes Rock
+*/
+import java.util.Random;
+import java.util.Scanner;
+
+public class RPS {
+	public static void main(String[] args) {
+
+		{
+			int R = 0; // R = Rock
+			int P = 1; // P = Paper
+			int S = 2; // S = Scissors
+			int L = 3; // L= Lizard
+			int Sp = 4; // Sp= Spock
+
+			int u; // User
+			int c; // Computer
+			Scanner Scan = new Scanner(System.in);
+			Random Rnum = new Random();
+
+			System.out.println("0. Rock");
+			System.out.println("1. Paper");
+			System.out.println("2. Scissors");
+			System.out.println("3. Lizard");
+			System.out.println("4. Spock");
+			System.out.println("please enter the number that cooresponds to your desired move: ");
+			u = Scan.nextInt();
+
+			c = Rnum.nextInt(5);
+
+			System.out.println("you picked " + u +", " + " the computer picked " + c + ".");
+			if ((u < 0) || (u > 4)) {
+				{
+					System.out.println("Please enter in a number that  cooresponds to a move");
+				}
+			} else if (u == c) {
+				System.out.println("\n******Draw******");
+			} else if ((u == R && c == S) || (u == R && c == L) || (u == S && c == L) || (u == S && c == P)
+					|| (u == P && c == Sp) || (u == P && c == R) || (u == L && c == Sp) || (u == L && c == P)
+					|| (u == Sp && c == S) || (u == Sp && c == R)) {
+				System.out.println("\n******You won!******");
+			}
+
+			else {
+				System.out.println("\n******You have been defeated!*******");
+			}
+		}
+	}
